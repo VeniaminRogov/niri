@@ -248,6 +248,7 @@ layout {
 // This line starts waybar, a commonly used bar for Wayland compositors.
 spawn-at-startup "waybar"
 spawn-at-startup "dunst"
+spawn-at-startup "~/.cargo/bin/pwsw" "daemon"
 
 // To run a shell command (with variables, pipes, etc.), use spawn-sh-at-startup:
 // spawn-sh-at-startup "qs -c ~/source/qs/MyAwesomeShell"
@@ -286,6 +287,12 @@ animations {
 // Window rules let you adjust behavior for individual windows.
 // Find more information on the wiki:
 // https://yalter.github.io/niri/Configuration:-Window-Rules
+
+// Pandora wallpaper daemon — place behind everything
+layer-rule {
+    match namespace="^pandora$"
+    place-within-backdrop true
+}
 
 // Work around WezTerm's initial configure bug
 // by setting an empty default-column-width.
